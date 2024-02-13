@@ -30,4 +30,17 @@ body {
     background-color: lightgray;
     grid-column: 2 / -1;
     grid-row: 2 / -1;
+    padding: 15px;
+}
+
+#content #project_grid {
+    display: grid;
+    gap: 15px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.project_card {
+    background-color: white;
+    border-radius: 7px;
 }
