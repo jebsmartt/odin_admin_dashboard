@@ -1,29 +1,115 @@
 :root {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    --odin-blue: rgb(41, 144, 248);
+    --odin-blue: rgb(0, 152, 223);
 }
 
 html,
 body {
     margin: 0;
+    width: 100%;
+    height: 100%;
 }
 
 body {
     display: grid;
     grid-template-columns: 1fr 5fr;
-    grid-template-rows: 200px 3fr;
+    grid-template-rows: 250px 1fr;
 }
 
 #sidebar {
     background-color: var(--odin-blue);
     grid-column: 1 / 2;
     grid-row: 1 / -1;
+    padding: 15px;
+    min-width: 10rem;
+}
+
+#logo {
+    width: 100px;
+    height: 50px;
+}
+
+#nav ul,
+#utilities ul {
+    list-style-type: none;
+    padding-left: 0px;
+}
+
+#nav ul li,
+#utilities ul li {
+    margin-bottom: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
 }
 
 #header {
     background-color: white;
+    padding-right: 30px;
+    padding-top: 30px;
+    padding-left: 30px;
     grid-column: 2 / -1;
     grid-row: 1 / 2;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 4rem 8rem;
+}
+
+#search {
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+#profile {
+    grid-area: 1 / 2 / 2 / -1;
+}
+
+#control_bar {
+    grid-area: 2 / 1 / -1 / -1;
+    padding: 0px;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr;
+    align-items: center;
+}
+
+#welcome {
+    grid-column: 1 / span 1;
+}
+
+#welcome h5 {
+    margin: 0px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+
+#welcome h1 {
+    margin: 0px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
+
+#controls {
+    grid-column: 2 / span 1;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+#controls button {
+    grid-column: span 1;
+    
+    background-color: var(--odin-blue);
+    border-radius: 25px;
+    border: none;
+    height: 3rem;
+    width: 7.5rem;
+    font-size: 1.2rem;
+    color: white;
+    font-weight: bold;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 #content {
@@ -31,13 +117,44 @@ body {
     grid-column: 2 / -1;
     grid-row: 2 / -1;
     padding: 15px;
+    padding-right: 30px;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 15px;
 }
 
-#content #project_grid {
+#projects {
+    grid-column: 1 /span 1;
+    grid-row: 1 / span 2;
+}
+
+#project_grid {
     display: grid;
     gap: 15px;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
+}
+
+.project_card,
+.content_card {
+    padding: 15px;
+}
+
+#announcements {
+    grid-column: -2 / -1;
+    grid-row: 1 / span 1;
+}
+
+#trends {
+    grid-column: -2 / -1;
+    grid-row: 2 / span 1;
+}
+
+.content_card {
+    background-color: white;
+    border-radius: 7px;
 }
 
 .project_card {
